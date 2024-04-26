@@ -1,7 +1,7 @@
 import {ChatEngine} from 'react-chat-engine';
 //import ChatFeed, {sendMessage, toggleChat} from './components/Chat
 import  ChatFeed from "./components/ChatFeed";
-import LoginForm from "./components/LoginForm"
+import LoginForm from "./components/LoginForm";
 
 import './App.css';
 
