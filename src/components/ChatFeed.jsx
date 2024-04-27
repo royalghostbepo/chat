@@ -3,7 +3,7 @@ import MyMessage from "./MyMessage";
 import ThierMessage from "./TheirMessage";
 
 const ChatFeed = (props) =>  {
-    const { chats, activeChat, username, messages} = props;
+    const { chats, activeChat, userName, messages} = props;
 
     const chat = chats && chats[activeChat];
 
@@ -11,7 +11,7 @@ const ChatFeed = (props) =>  {
         const keys = Object.keys(messages);
 
 
-        return  keys.map((key)=>{
+        return  keys.map((key, index)=>{
             const  message = messages[key];
             const lastMessageKey = index === 0 ? null : keys[index - 1];
             const isMyMesaage = userName === message.sender.username;
@@ -38,12 +38,7 @@ const ChatFeed = (props) =>  {
 }
 
 
-    if (!chat || !username) {
-      return <p>Please select a chat.</p>;
-    } else {
-      console.log("chatting with ", chat.name);
-      
-    }
+    if (!chat ) return 'Loading...';
 
     return (
         <div className="chat-feed">
